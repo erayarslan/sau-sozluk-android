@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:longClickable="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <TextView
+            android:id="@+id/entryNumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8px"
+            android:gravity="left"
+            android:textSize="12dp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:background="#ffffff"
+            android:padding="4dp"
+            android:textColor="#555555" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <TextView
+            android:id="@+id/entryContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="2px"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:padding="4dp"
+            android:textColor="#555555" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/entryStats"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8px"
+            android:layout_marginTop="4px"
+            android:text="@string/how"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="#34495e"
+            android:textColor="#ffffff"
+            android:layout_weight="3"/>
+        <TextView
+            android:id="@+id/entryDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8px"
+            android:layout_marginTop="4px"
+            android:gravity="right"
+            android:layout_weight="0.5"
+            android:background="#ffffff"
+            android:padding="4dp"
+            android:textColor="#555555" />
+    </LinearLayout>
+
+</LinearLayout>

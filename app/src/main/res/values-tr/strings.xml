@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">saü sözlük</string>
+    <string name="action_about">hakkında</string>
+    <string name="about_info">guguluk tarafından geliştirildi</string>
+    <string name="test_info">mia tarafından test edildi</string>
+    <string name="bugSense">9594ae62</string>
+    <string name="error">hata</string>
+    <string name="title_activity_entry_list">saü sözlük</string>
+    <string name="topic_not_found">bulunamadı</string>
+    <string name="how">n?</string>
+    <string name="title_activity_router">yönlendirici</string>
+    <!-- Date Util -->
+    <string name="date_util_term_less">den daha az</string>
+    <string name="date_util_term_a">bir</string>
+    <string name="date_util_term_an">bir</string>
+    <string name="date_util_unit_second">saniye</string>
+    <string name="date_util_unit_seconds">saniye</string>
+    <string name="date_util_unit_minute">dakika</string>
+    <string name="date_util_unit_minutes">dakika</string>
+    <string name="date_util_unit_hour">saat</string>
+    <string name="date_util_unit_hours">saat</string>
+    <string name="date_util_unit_day">gün</string>
+    <string name="date_util_unit_days">gün</string>
+    <string name="date_util_unit_month">ay</string>
+    <string name="date_util_unit_months">ay</string>
+    <string name="date_util_unit_year">yıl</string>
+    <string name="date_util_unit_years">yıl</string>
+    <string name="date_util_prefix_lt">den daha az</string>
+    <string name="date_util_prefix_about">yaklaşık</string>
+    <string name="date_util_prefix_over">in üzerinde</string>
+    <string name="date_util_prefix_almost">nerdeyse</string>
+    <string name="date_util_suffix">önce</string>
+</resources>

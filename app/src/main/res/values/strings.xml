@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">saü sözlük</string>
+    <string name="action_about">about</string>
+    <string name="about_info">developed by guguluk</string>
+    <string name="test_info">tested by mia</string>
+    <string name="bugSense">9594ae62</string>
+    <string name="error">error</string>
+    <string name="title_activity_entry_list">saü sözlük</string>
+    <string name="topic_not_found">not found</string>
+    <string name="how">h?</string>
+    <string name="title_activity_router">router</string>
+    <!-- Date Util -->
+    <string name="date_util_term_less">less than</string>
+    <string name="date_util_term_a">a</string>
+    <string name="date_util_term_an">an</string>
+    <string name="date_util_unit_second">second</string>
+    <string name="date_util_unit_seconds">seconds</string>
+    <string name="date_util_unit_minute">minute</string>
+    <string name="date_util_unit_minutes">minutes</string>
+    <string name="date_util_unit_hour">hour</string>
+    <string name="date_util_unit_hours">hours</string>
+    <string name="date_util_unit_day">day</string>
+    <string name="date_util_unit_days">days</string>
+    <string name="date_util_unit_month">month</string>
+    <string name="date_util_unit_months">months</string>
+    <string name="date_util_unit_year">year</string>
+    <string name="date_util_unit_years">years</string>
+    <string name="date_util_prefix_lt">less than a</string>
+    <string name="date_util_prefix_about">about</string>
+    <string name="date_util_prefix_over">over</string>
+    <string name="date_util_prefix_almost">almost</string>
+    <string name="date_util_suffix">ago</string>
+</resources>

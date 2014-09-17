@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_stats"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:longClickable="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="-12.5dp"
+            android:background="@drawable/stats_popup_fav_shape"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_gravity="center"
+            android:id="@+id/favori"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="-12.5dp"
+            android:background="@drawable/stats_popup_iyi_shape"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_gravity="center"
+            android:id="@+id/iyi_bu"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-50dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/stats_popup_yapma_shape"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_gravity="center"
+            android:id="@+id/yapma"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,22 @@
+<uk.co.senab.actionbarpulltorefresh.extras.actionbarcompat.PullToRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ptr_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="horizontal">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+    </ScrollView>
+
+    <ListView
+        android:id="@+id/listTopic"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000"
+        android:scrollbars="none" />
+
+</uk.co.senab.actionbarpulltorefresh.extras.actionbarcompat.PullToRefreshLayout>
