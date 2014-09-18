@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">saü sözlük</string>
     <string name="action_about">about</string>
     <string name="about_info">developed by guguluk</string>
@@ -9,6 +11,18 @@
     <string name="topic_not_found">not found</string>
     <string name="how">h?</string>
     <string name="title_activity_router">router</string>
+    <string name="welcome">such wow!</string>
+    <string name="noob">noob</string>
+    <string name="writer">writer</string>
+    <string name="moderator">moderator</string>
+    <string name="admin">admin</string>
+    <string name="unknown">unknown</string>
+    <string name="generation">generation</string>
+    <string name="entry">entry</string>
+    <string name="point">point</string>
+    <string name="last_five_entry_title">last 5 entry:</string>
+    <string name="last_active_title">last active:</string>
+    <string name="registered_title">registered:</string>
     <!-- Date Util -->
     <string name="date_util_term_less">less than</string>
     <string name="date_util_term_a">a</string>
@@ -30,4 +44,5 @@
     <string name="date_util_prefix_over">over</string>
     <string name="date_util_prefix_almost">almost</string>
     <string name="date_util_suffix">ago</string>
+
 </resources>

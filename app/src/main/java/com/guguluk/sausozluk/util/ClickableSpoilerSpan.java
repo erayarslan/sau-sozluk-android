@@ -4,13 +4,13 @@ import android.support.annotation.NonNull;
 import android.text.style.URLSpan;
 import android.view.View;
 
-public class ClickableYildizliBkzSpan extends URLSpan {
-    public ClickableYildizliBkzSpan(String url) {
+public class ClickableSpoilerSpan extends URLSpan {
+    public ClickableSpoilerSpan(String url) {
         super(url);
     }
 
     @Override
     public void onClick(@NonNull View widget) {
-        Utils.showMessage(Constants.star.trim(), Utils.lowerCase(getURL()), widget.getContext());
+        Utils.showMessage(Constants.spoiler.trim(), Utils.lowerCase(getURL()), widget.getContext());
     }
 }

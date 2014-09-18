@@ -2,6 +2,7 @@ package com.guguluk.sausozluk.activity;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Parcelable;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.github.mrengineer13.snackbar.SnackBar;
 import com.guguluk.sausozluk.R;
 import com.guguluk.sausozluk.adapter.TopicListAdapter;
 import com.guguluk.sausozluk.dto.Topic;
@@ -64,6 +67,9 @@ public class TopicListActivity extends ActionBarActivity implements SearchView.O
         topicListView = (ListView) findViewById(R.id.listTopic);
         //
         fetchTopics();
+        //
+        SnackBar mSnackBar = new SnackBar(this);
+        mSnackBar.show(getString(R.string.welcome), SnackBar.LONG_SNACK);
     }
 
     @Override

@@ -143,6 +143,8 @@ public class Utils {
         Pattern bkzPattern = Pattern.compile(Constants.bkz_pattern);
         Pattern urlPattern = Pattern.compile(Constants.url_pattern);
         Pattern yildizliBkzPattern = Pattern.compile(Constants.yildizli_bkz_pattern);
+        Pattern spoilerPattern = Pattern.compile(Constants.spoiler_pattern);
+        Pattern yazarPattern = Pattern.compile(Constants.yazar_pattern);
         //
         Matcher bkzMatcher = bkzPattern.matcher(input);
         Matcher urlMatcher = urlPattern.matcher(input);
@@ -172,10 +174,36 @@ public class Utils {
             int end = yildizliBkzMatcher.end()-1;
             //
             String text = input.subSequence(start, end).toString();
-            builder = builder.replace(yildizliBkzMatcher.start()-deletedChar,yildizliBkzMatcher.end()-deletedChar,"*");
+            builder = builder.replace(yildizliBkzMatcher.start()-deletedChar,yildizliBkzMatcher.end()-deletedChar,Constants.star);
             ClickableYildizliBkzSpan url = new ClickableYildizliBkzSpan(text);
-            builder.setSpan(url, yildizliBkzMatcher.start()-deletedChar, yildizliBkzMatcher.start()-deletedChar+1, 0);
+            builder.setSpan(url, yildizliBkzMatcher.start()-deletedChar, yildizliBkzMatcher.start()-deletedChar+Constants.star.length(), 0);
             deletedChar += yildizliBkzMatcher.end()-yildizliBkzMatcher.start()-1;
+        }
+        //
+        Matcher spoilerMatcher = spoilerPattern.matcher(input);
+        deletedChar = 0;
+        while (spoilerMatcher.find()) {
+            int start = spoilerMatcher.start()+9;
+            int end = spoilerMatcher.end()-1;
+            //
+            String text = input.substring(start,end).toString();
+            builder = builder.replace(spoilerMatcher.start()-deletedChar,spoilerMatcher.end()-deletedChar,Constants.spoiler);
+            ClickableSpoilerSpan url = new ClickableSpoilerSpan(text);
+            builder.setSpan(url, spoilerMatcher.start()-deletedChar, spoilerMatcher.start()-deletedChar+Constants.spoiler.length(), 0);
+            deletedChar += spoilerMatcher.end()-spoilerMatcher.start()-1;
+        }
+        //
+        Matcher yazarMatcher = yazarPattern.matcher(input);
+        deletedChar = 0;
+        while (yazarMatcher.find()) {
+            int start = yazarMatcher.start()+7;
+            int end = yazarMatcher.end()-1;
+            //
+            String text = input.substring(start,end).toString();
+            builder = builder.replace(yazarMatcher.start()-deletedChar,yazarMatcher.end()-deletedChar,text);
+            ClickableYazarSpan url = new ClickableYazarSpan(text);
+            builder.setSpan(url, yazarMatcher.start()-deletedChar, yazarMatcher.start()-deletedChar+text.length(), 0);
+            deletedChar += yazarMatcher.end()-yazarMatcher.start()-text.length();
         }
         //
         return builder;
@@ -191,5 +219,18 @@ public class Utils {
         } else {
             return Constants._null;
         }
+    }
+
+    public static String authToString(Number auth, Context context) {
+        int authValue = auth.intValue();
+        if(authValue == 0) {
+            return context.getString(R.string.noob);
+        } else if(authValue == 1) {
+            return context.getString(R.string.writer);
+        } else if(authValue == 2) {
+            return context.getString(R.string.moderator);
+        } else if(authValue == 3) {
+            return context.getString(R.string.admin);
+        } return context.getString(R.string.unknown);
     }
 }

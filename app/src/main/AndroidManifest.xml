@@ -47,6 +47,16 @@
                     android:scheme="http" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.ProfileActivity"
+            android:label="@string/app_name"
+            android:configChanges="orientation"
+            android:launchMode="singleInstance"
+            android:parentActivityName=".activity.TopicListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.guguluk.sausozluk.activity.TopicListActivity" />
+        </activity>
     </application>
 
 </manifest>

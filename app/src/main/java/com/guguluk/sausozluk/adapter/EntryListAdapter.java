@@ -3,6 +3,7 @@ package com.guguluk.sausozluk.adapter;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.guguluk.sausozluk.R;
 import com.guguluk.sausozluk.activity.EntryListActivity;
+import com.guguluk.sausozluk.activity.ProfileActivity;
 import com.guguluk.sausozluk.dto.Entry;
 import com.guguluk.sausozluk.util.Constants;
 import com.guguluk.sausozluk.util.Utils;
@@ -75,6 +77,17 @@ public class EntryListAdapter extends BaseAdapter {
         textEntryDetail.setText(
                 Utils.lowerCase(entry.getCreatedBy().getUsername()) + " / " +
                         Utils.dateToPrettyFormat(entry.getCreatedAt(), context));
+        textEntryDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Activity activity = (Activity) view.getContext();
+                activity.finish();
+                //
+                Intent intent = new Intent(view.getContext(), ProfileActivity.class);
+                intent.putExtra(Constants.username_parameter, entry.getCreatedBy().getClean());
+                view.getContext().startActivity(intent);
+            }
+        });
         //
         textEntryContent.setMovementMethod(LinkMovementMethod.getInstance());
         //

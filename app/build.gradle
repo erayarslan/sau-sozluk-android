@@ -8,8 +8,8 @@ android {
         applicationId "com.guguluk.sausozluk"
         minSdkVersion 9
         targetSdkVersion 20
-        versionCode 6
-        versionName "1.4"
+        versionCode 7
+        versionName "1.5"
     }
     buildTypes {
         release {
@@ -36,4 +36,5 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.0.0'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
     compile 'com.squareup.okio:okio:1.0.1'
+    compile 'com.github.mrengineer13:snackbar:0.2.0'
 }

@@ -18,7 +18,11 @@ public class Router extends ActionBarActivity {
         } else if(url.startsWith(Constants.entry_base_url)) {
             intent = new Intent(this, EntryListActivity.class);
             intent.putExtra(Constants.entry_id_parameter, url.split("/")[5]);
-        } else {
+        } else if(url.startsWith(Constants.user_base_url)) {
+            intent = new Intent(this, ProfileActivity.class);
+            intent.putExtra(Constants.username_parameter, url.split("/")[5]);
+        }
+        else {
             intent = new Intent(this, TopicListActivity.class);
         }
         startActivity(intent);
