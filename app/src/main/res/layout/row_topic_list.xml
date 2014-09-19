@@ -16,13 +16,13 @@
 
     <TextView
         android:id="@+id/topicEntryCount"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
         android:layout_margin="8dp"
         android:background="@drawable/entry_count_shape"
         android:gravity="center_vertical|center_horizontal"
         android:layout_gravity="center"
-        android:padding="8dp"
+        android:padding="4dp"
         android:textColor="#ffffff" />
 
 </LinearLayout>
