@@ -2,6 +2,7 @@ package com.guguluk.sausozluk.activity;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Parcelable;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
@@ -39,6 +40,12 @@ public class TopicListActivity extends ActionBarActivity implements SearchView.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if(Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.GINGERBREAD) {
+            getActionBar().setDisplayShowHomeEnabled(false);
+            getActionBar().setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
+        }
+
         setContentView(R.layout.activity_topic_list);
         //
         Utils.startBugSense(this);
