@@ -13,6 +13,7 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.os.Build;
 
 import com.guguluk.sausozluk.R;
 import com.guguluk.sausozluk.adapter.LastFiveEntryListAdapter;
