@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.text.SpannableStringBuilder;
@@ -140,7 +141,11 @@ public class Utils {
 
     public static void invisibleIcon(Context context) {
         ImageView imageView = (ImageView)(((Activity)context).findViewById(R.id.home));
-        imageView.setVisibility(View.INVISIBLE);
+        if(imageView!=null) {
+            imageView.setVisibility(View.INVISIBLE);
+        } else {
+            ((Activity)context).getActionBar().setIcon(new ColorDrawable(((Activity)context).getResources().getColor(android.R.color.transparent)));
+        }
     }
 
     public static SpannableStringBuilder prettyBuildForContent(String input) {
