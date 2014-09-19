@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -43,6 +44,8 @@ public class TopicListActivity extends ActionBarActivity implements SearchView.O
         //
         Utils.startBugSense(this);
         Typeface font = Utils.getFont(this);
+        //
+        Utils.invisibleIcon(this);
         //
         pullToRefreshLayout = (PullToRefreshLayout) findViewById(R.id.ptr_layout);
         ActionBarPullToRefresh.from(this)

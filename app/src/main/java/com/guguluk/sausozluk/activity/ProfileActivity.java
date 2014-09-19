@@ -54,6 +54,8 @@ public class ProfileActivity extends ActionBarActivity {
         //
         Typeface font = Utils.getFont(this);
         //
+        Utils.invisibleIcon(this);
+        //
         TextView title;
         if(findViewById(R.id.action_bar_title)!=null) {
             title = (TextView)findViewById(R.id.action_bar_title);

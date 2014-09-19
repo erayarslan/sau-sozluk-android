@@ -8,6 +8,8 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.text.SpannableStringBuilder;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.bugsense.trace.BugSenseHandler;
 import com.guguluk.sausozluk.R;
@@ -134,6 +136,11 @@ public class Utils {
 
     public static String lowerCase(String content) {
         return content.toLowerCase(new Locale(Constants.tr_locate));
+    }
+
+    public static void invisibleIcon(Context context) {
+        ImageView imageView = (ImageView)(((Activity)context).findViewById(R.id.home));
+        imageView.setVisibility(View.INVISIBLE);
     }
 
     public static SpannableStringBuilder prettyBuildForContent(String input) {

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -47,6 +48,8 @@ public class EntryListActivity extends ActionBarActivity {
         setContentView(R.layout.activity_entry_list);
         //
         font = Utils.getFont(this);
+        //
+        Utils.invisibleIcon(this);
         //
         if(findViewById(R.id.action_bar_title)!=null) {
             title = (TextView)findViewById(R.id.action_bar_title);
