@@ -41,8 +41,10 @@ public class TopicListActivity extends ActionBarActivity implements SearchView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.GINGERBREAD)
+        if(Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.GINGERBREAD) {
             getActionBar().setDisplayShowHomeEnabled(false);
+            getActionBar().setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
+        }
 
         setContentView(R.layout.activity_topic_list);
         //
