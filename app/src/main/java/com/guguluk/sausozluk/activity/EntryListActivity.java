@@ -67,6 +67,9 @@ public class EntryListActivity extends ActionBarActivity {
         } else {
             finish();
         }
+        
+        if(Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.GINGERBREAD)
+            getActionBar().setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
     }
 
     public void initiatePopupWindow(String favori, String iyi_bu, String yapma) {
