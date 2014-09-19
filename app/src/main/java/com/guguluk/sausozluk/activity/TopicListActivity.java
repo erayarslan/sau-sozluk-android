@@ -1,7 +1,6 @@
 package com.guguluk.sausozluk.activity;
 
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Parcelable;
