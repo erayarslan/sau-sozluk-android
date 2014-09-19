@@ -144,7 +144,7 @@ public class Utils {
     }
 
     public static SpannableStringBuilder prettyBuildForContent(String input) {
-        input = Utils.lowerCase(input).replace(Constants.html_break_line,"");
+        input = Utils.lowerCase(input.trim()).replace(Constants.html_break_line,"");
         SpannableStringBuilder builder = new SpannableStringBuilder(input);
         //
         Pattern bkzPattern = Pattern.compile(Constants.bkz_pattern);

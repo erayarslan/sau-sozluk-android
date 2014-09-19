@@ -15,4 +15,8 @@ public class TopicResource {
     public void getTopicByCount(Integer count, Callback callback) {
         topicService.getTopicByCount(count, callback);
     }
+
+    public void searchByTopic(String query, Callback callback) {
+        topicService.searchByTopic(query, callback);
+    }
 }

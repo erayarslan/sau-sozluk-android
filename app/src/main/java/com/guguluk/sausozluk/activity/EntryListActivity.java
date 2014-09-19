@@ -1,9 +1,11 @@
 package com.guguluk.sausozluk.activity;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -90,7 +92,10 @@ public class EntryListActivity extends ActionBarActivity {
         txtIyiBu.setText(iyi_bu);
         txtYapma.setText(yapma);
 
-        popupWindow = new PopupWindow(layout, 400, 400, true);
+        Resources r = getResources();
+        float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 250, r.getDisplayMetrics());
+
+        popupWindow = new PopupWindow(layout, (int)px, (int)px, true);
         popupWindow.showAtLocation(layout, Gravity.CENTER, 0, 0);
 
         layout.setOnClickListener(new View.OnClickListener() {

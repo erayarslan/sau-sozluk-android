@@ -70,9 +70,6 @@ public class TopicListActivity extends ActionBarActivity implements SearchView.O
         topicListView = (ListView) findViewById(R.id.listTopic);
         //
         fetchTopics();
-        //
-        SnackBar mSnackBar = new SnackBar(this);
-        mSnackBar.show(getString(R.string.welcome), SnackBar.LONG_SNACK);
     }
 
     @Override

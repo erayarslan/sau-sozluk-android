@@ -8,8 +8,8 @@ android {
         applicationId "com.guguluk.sausozluk"
         minSdkVersion 9
         targetSdkVersion 20
-        versionCode 7
-        versionName "1.5"
+        versionCode 8
+        versionName "1.5.1"
     }
     buildTypes {
         release {
