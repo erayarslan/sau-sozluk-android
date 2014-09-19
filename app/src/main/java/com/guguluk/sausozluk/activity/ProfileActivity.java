@@ -13,6 +13,7 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.os.Build;
 
 import com.guguluk.sausozluk.R;
 import com.guguluk.sausozluk.adapter.LastFiveEntryListAdapter;
@@ -62,6 +63,10 @@ public class ProfileActivity extends ActionBarActivity {
         }
         title.setTypeface(font);
         title.setTextSize(Constants.title_font_size); // todo: noktakomm was here
+        
+        if(Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.GINGERBREAD)
+            getActionBar().setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
+        
         //
         entryListView = (ListView) findViewById(R.id.listFiveEntry);
         //
