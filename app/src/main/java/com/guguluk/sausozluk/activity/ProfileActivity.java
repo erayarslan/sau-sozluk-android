@@ -62,6 +62,10 @@ public class ProfileActivity extends ActionBarActivity {
         }
         title.setTypeface(font);
         title.setTextSize(Constants.title_font_size); // todo: noktakomm was here
+        
+        if(Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.GINGERBREAD)
+            getActionBar().setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
+        
         //
         entryListView = (ListView) findViewById(R.id.listFiveEntry);
         //
