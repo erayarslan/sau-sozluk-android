@@ -2,11 +2,7 @@ package com.guguluk.sausozluk.activity;
 
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
 import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcelable;
 import android.support.v4.view.MenuItemCompat;
