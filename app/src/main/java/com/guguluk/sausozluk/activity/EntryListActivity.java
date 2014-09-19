@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.os.Build;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
