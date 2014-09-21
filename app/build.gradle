@@ -30,11 +30,11 @@ dependencies {
     compile('com.github.chrisbanes.actionbarpulltorefresh:extra-abc:0.9.9') {
         exclude group: 'com.android.support', module: 'appcompat-v7'
     }
+
     compile 'com.android.support:appcompat-v7:20.0.0'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.squareup.retrofit:retrofit:1.6.1'
     compile 'com.squareup.okhttp:okhttp:2.0.0'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
     compile 'com.squareup.okio:okio:1.0.1'
-    compile 'com.github.mrengineer13:snackbar:0.2.0'
 }

@@ -20,9 +20,6 @@
 <resources>
 
     <style name="Theme.Sausozluk" parent="@style/Theme.AppCompat">
-        <item name="snackBarContainerStyle">@style/SnackBar.Container</item>
-        <item name="snackBarTextStyle">@style/SnackBar.Message</item>
-        <item name="snackBarButtonStyle">@style/SnackBar.Button</item>
         <item name="actionBarItemBackground">@drawable/selectable_background_sausozluk</item>
         <item name="popupMenuStyle">@style/PopupMenu.Sausozluk</item>
         <item name="dropDownListViewStyle">@style/DropDownListView.Sausozluk</item>

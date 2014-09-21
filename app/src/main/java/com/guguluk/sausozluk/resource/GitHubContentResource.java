@@ -1,27 +1,19 @@
 package com.guguluk.sausozluk.resource;
 
-import com.guguluk.sausozluk.service.EntryService;
-import com.guguluk.sausozluk.util.SauSozlukRestAdapter;
+import com.guguluk.sausozluk.service.GitHubContentService;
+import com.guguluk.sausozluk.util.GitHubContentRestAdapter;
 
 import retrofit.Callback;
 
 @SuppressWarnings("unchecked")
 public class GitHubContentResource {
-    private EntryService entryService;
+    private GitHubContentService gitHubContentService;
 
     public GitHubContentResource() {
-        entryService = new SauSozlukRestAdapter().getRestAdapter().create(EntryService.class);
+        gitHubContentService = new GitHubContentRestAdapter().getRestAdapter().create(GitHubContentService.class);
     }
 
-    public void getTopicEntriesByPage(String topicUrl, Integer page, Callback callback) {
-        entryService.getTopicEntriesByPage(topicUrl, page, callback);
-    }
-
-    public void getEntryStatsById(String id, Callback callback) {
-        entryService.getEntryStatsById(id, callback);
-    }
-
-    public void getEntryById(String id, Callback callback) {
-        entryService.getEntryById(id, callback);
+    public void getProjectReadMe(Callback callback) {
+        gitHubContentService.getProjectReadMe(callback);
     }
 }

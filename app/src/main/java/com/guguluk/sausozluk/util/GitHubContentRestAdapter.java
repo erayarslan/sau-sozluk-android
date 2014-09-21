@@ -7,7 +7,6 @@ import com.google.gson.internal.bind.DateTypeAdapter;
 import java.util.Date;
 
 import retrofit.RestAdapter;
-import retrofit.converter.GsonConverter;
 
 public class GitHubContentRestAdapter {
     private RestAdapter restAdapter;
@@ -18,8 +17,8 @@ public class GitHubContentRestAdapter {
                 .create();
 
         restAdapter = new RestAdapter.Builder()
-                .setEndpoint("http://sausozluk.net")
-                .setConverter(new GsonConverter(gson))
+                .setEndpoint("https://raw.githubusercontent.com")
+                .setConverter(new StringConverter())
                 .build();
     }
 

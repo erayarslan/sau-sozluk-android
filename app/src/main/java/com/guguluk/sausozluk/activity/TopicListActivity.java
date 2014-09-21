@@ -11,12 +11,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.github.mrengineer13.snackbar.SnackBar;
 import com.guguluk.sausozluk.R;
 import com.guguluk.sausozluk.adapter.TopicListAdapter;
 import com.guguluk.sausozluk.dto.SearchResult;
@@ -159,10 +157,14 @@ public class TopicListActivity extends ActionBarActivity implements SearchView.O
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_about) {
+            Intent intent = new Intent(TopicListActivity.this, AboutActivity.class);
+            startActivity(intent);
+            /*
             Utils.showMessage(
                     getString(R.string.action_about),
                     getString(R.string.about_info)+Constants.break_line+getString(R.string.test_info),
                     TopicListActivity.this);
+            */
             return true;
         }
         //
