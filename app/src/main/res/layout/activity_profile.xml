@@ -1,6 +1,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none"
     android:background="#ffffff">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -114,7 +115,7 @@
             android:layout_width="match_parent"
             android:cacheColorHint="#00000000"
             android:scrollbars="none"
-            android:layout_height="144dp" />
+            android:layout_height="156dp" />
 
         <TextView
             android:id="@+id/last_active_title"

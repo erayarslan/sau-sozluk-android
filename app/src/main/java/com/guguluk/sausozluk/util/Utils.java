@@ -17,8 +17,10 @@ import com.guguluk.sausozluk.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -148,8 +150,28 @@ public class Utils {
         }
     }
 
+    public static String lowerFixer(String input) {
+        List<String> foundedUrls = new ArrayList<String>();
+        //
+        Pattern urlPattern = Pattern.compile(Constants.url_pattern);
+        Matcher urlMatcher = urlPattern.matcher(input);
+        while (urlMatcher.find()) {
+            int start = urlMatcher.start()+6;
+            int end = urlMatcher.end()-1;
+            //
+            foundedUrls.add(input.subSequence(start, end).toString());
+        }
+        //
+        input = Utils.lowerCase(input);
+        //
+        for(String i : foundedUrls) {
+            input = input.replaceAll(Utils.lowerCase(i), i);
+        }
+        return input;
+    }
+
     public static SpannableStringBuilder prettyBuildForContent(String input) {
-        input = Utils.lowerCase(input.trim()).replace(Constants.html_break_line,"");
+        input = lowerFixer(input.trim()).replace(Constants.html_break_line,"");
         SpannableStringBuilder builder = new SpannableStringBuilder(input);
         //
         Pattern bkzPattern = Pattern.compile(Constants.bkz_pattern);

@@ -52,7 +52,7 @@ public class TopicListAdapter extends BaseAdapter {
         Typeface font = Utils.getFont(context);
         textTopicName.setText(Utils.lowerCase(topic.getName()));
         textTopicName.setTypeface(font);
-        if(topic.getEntry_count().intValue()!=0) {
+        if(topic.getEntry_count()!=null && topic.getEntry_count().intValue()!=0) {
             textEntryCount.setText(topic.getEntry_count().toString());
             textEntryCount.setTypeface(font);
             textEntryCount.setBackgroundResource(R.drawable.entry_count_shape);

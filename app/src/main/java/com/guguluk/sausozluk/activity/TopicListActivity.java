@@ -14,10 +14,12 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.mrengineer13.snackbar.SnackBar;
 import com.guguluk.sausozluk.R;
 import com.guguluk.sausozluk.adapter.TopicListAdapter;
+import com.guguluk.sausozluk.dto.SearchResult;
 import com.guguluk.sausozluk.dto.Topic;
 import com.guguluk.sausozluk.dto.TopicListResult;
 import com.guguluk.sausozluk.resource.TopicResource;
@@ -36,6 +38,7 @@ public class TopicListActivity extends ActionBarActivity implements SearchView.O
     private TopicResource topicResource = new TopicResource();
     private ListView topicListView;
     private PullToRefreshLayout pullToRefreshLayout;
+    private Boolean searching = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +97,60 @@ public class TopicListActivity extends ActionBarActivity implements SearchView.O
 
     @Override
     public boolean onQueryTextChange(String input) {
+        if(searching) {
+            return false;
+        }
+        if(input.trim().equalsIgnoreCase("")) {
+            fetchTopics();
+            return false;
+        }
+        pullToRefreshLayout.setRefreshing(true);
+        searching = true;
+        topicResource.searchByTopic(input,new Callback() {
+            @Override
+            public void failure(RetrofitError arg0) {
+                pullToRefreshLayout.setRefreshComplete();
+                //
+                Toast.makeText(TopicListActivity.this,arg0.getMessage(), Toast.LENGTH_SHORT).show();
+                searching = false;
+            }
+
+            @Override
+            public void success(Object arg0, Response arg1) {
+                pullToRefreshLayout.setRefreshComplete();
+                //
+                searching = false;
+                //
+                final SearchResult searchResult = (SearchResult) arg0;
+                final List<Topic> topicList = searchResult.getData().getTopics();
+                //
+                TopicListAdapter topicListAdapter = new TopicListAdapter(TopicListActivity.this, topicList);
+                topicListView.setAdapter(topicListAdapter);
+                topicListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                        Intent intent = new Intent(TopicListActivity.this, EntryListActivity.class);
+                        intent.putExtra(Constants.topic_url_parameter, topicList.get(arg2).getUrl());
+                        startActivity(intent);
+                    }
+                });
+                //
+                topicListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                    @Override
+                    public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                        Topic targetTopic = topicList.get(arg2);
+                        //
+                        String topic = targetTopic.getName();
+                        String url = Constants.topic_base_url + targetTopic.getUrl();
+                        String content = Utils.lowerCase(topic) + ": " + url + " " + Constants.twitter;
+                        //
+                        Utils.share(content,TopicListActivity.this);
+                        //
+                        return true;
+                    }
+                });
+            }
+        });
         //
         return false;
     }
