@@ -3,17 +3,27 @@ package com.guguluk.sausozluk.util;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.text.SpannableStringBuilder;
+import android.util.TypedValue;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.bugsense.trace.BugSenseHandler;
 import com.guguluk.sausozluk.R;
+import com.guguluk.sausozluk.span.ClickableBkzSpan;
+import com.guguluk.sausozluk.span.ClickableLinkSpan;
+import com.guguluk.sausozluk.span.ClickableSpoilerSpan;
+import com.guguluk.sausozluk.span.ClickableYazarSpan;
+import com.guguluk.sausozluk.span.ClickableYildizliBkzSpan;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -31,6 +41,27 @@ public class Utils {
         alertMessage.setTitle(header);
         alertMessage.setMessage(content);
         alertMessage.show();
+    }
+
+    public static void showInput(String header, final String tag, Context context, final EditText target) {
+        final EditText input = new EditText(context);
+        //
+        new AlertDialog.Builder(context)
+                .setView(input)
+                .setMessage(header)
+                .setPositiveButton(context.getString(R.string.ok), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        String current = target.getText().toString();
+                        current += ("["+tag+":" + input.getText() + "]");
+                        target.setText(current);
+                        //
+                        target.setSelection(target.getText().toString().length());
+                    }
+                })
+                .setNegativeButton(context.getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) { }
+                })
+                .show();
     }
 
     public static void visitUrl(String url, Activity activity) {
@@ -56,7 +87,7 @@ public class Utils {
         Date curDate = currentDate();
         long now = curDate.getTime();
         if (time > now || time <= 0) {
-            return null;
+            return ctx.getResources().getString(R.string.now);
         }
 
         int dim = getTimeDistanceInMinutes(time);
@@ -266,5 +297,31 @@ public class Utils {
         } else if(authValue == 3) {
             return context.getString(R.string.admin);
         } return context.getString(R.string.unknown);
+    }
+
+    public static void logout(Context context) {
+        SharedPreferences prefs = new ObscuredSharedPreferences(context, context.getSharedPreferences(Constants.store_info_name, Context.MODE_PRIVATE));
+        //
+        prefs.edit().putString(Constants.store_token,null).commit();
+        prefs.edit().putString(Constants.store_username,null).commit();
+        prefs.edit().putString(Constants.store_clean,null).commit();
+        prefs.edit().putString(Constants.store_auth,null).commit();
+        prefs.edit().putString(Constants.store_id,null).commit();
+    }
+
+    public static String getUserToken(Context context) {
+        SharedPreferences prefs = new ObscuredSharedPreferences(context, context.getSharedPreferences(Constants.store_info_name, Context.MODE_PRIVATE));
+        //
+        return prefs.getString(Constants.store_token, null);
+    }
+
+    public static String getUserId(Context context) {
+        SharedPreferences prefs = new ObscuredSharedPreferences(context, context.getSharedPreferences(Constants.store_info_name, Context.MODE_PRIVATE));
+        //
+        return prefs.getString(Constants.store_id, null);
+    }
+
+    public static float dpTopx(Integer dp, Context context){
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources().getDisplayMetrics());
     }
 }

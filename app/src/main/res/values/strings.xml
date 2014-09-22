@@ -23,6 +23,25 @@
     <string name="last_five_entry_title">last 5 entry:</string>
     <string name="last_active_title">last active:</string>
     <string name="registered_title">registered:</string>
+    <string name="title_activity_login">login</string>
+    <string name="loginFormTitle">login</string>
+    <string name="loginUsernameTitle">nickname:</string>
+    <string name="loginUsernameInputHint">nickname or email</string>
+    <string name="loginPasswordTitle">password:</string>
+    <string name="loginPasswordInputHint">so cute password</string>
+    <string name="loginButton">go go go</string>
+    <string name="ok">ok</string>
+    <string name="cancel">cancel</string>
+    <string name="new_entry_hint">...</string>
+    <string name="btn_close">x</string>
+    <string name="btn_bkz">bkz</string>
+    <string name="btn_spoiler">spoiler</string>
+    <string name="btn_link">link</string>
+    <string name="btn_star">*</string>
+    <string name="btn_writer">writer</string>
+    <string name="btn_fire">fire</string>
+    <string name="empty_entry">where is your entry?!</string>
+    <string name="new_topic_hint">hmm...</string>
     <!-- Date Util -->
     <string name="date_util_term_less">less than</string>
     <string name="date_util_term_a">a</string>
@@ -44,5 +63,6 @@
     <string name="date_util_prefix_over">over</string>
     <string name="date_util_prefix_almost">almost</string>
     <string name="date_util_suffix">ago</string>
+    <string name="now">now</string>
 
 </resources>

@@ -21,6 +21,25 @@
     <string name="last_five_entry_title">son 5 entry:</string>
     <string name="last_active_title">son ziyaret tarihi:</string>
     <string name="registered_title">buralara ayak bastığı gün:</string>
+    <string name="title_activity_login">giriş yap</string>
+    <string name="loginFormTitle">stargate</string>
+    <string name="loginUsernameTitle">takma ad:</string>
+    <string name="loginUsernameInputHint">takma adın veya e-postan</string>
+    <string name="loginPasswordTitle">parola:</string>
+    <string name="loginPasswordInputHint">parola şafak</string>
+    <string name="loginButton">giriş çabası</string>
+    <string name="ok">tamam</string>
+    <string name="cancel">iptal</string>
+    <string name="new_entry_hint">hakkında buradan yardır</string>
+    <string name="btn_close">x</string>
+    <string name="btn_bkz">bkz</string>
+    <string name="btn_spoiler">spoiler</string>
+    <string name="btn_link">link</string>
+    <string name="btn_star">*</string>
+    <string name="btn_writer">yazar</string>
+    <string name="btn_fire">ateşle</string>
+    <string name="empty_entry">bişeyler yazaydın?!</string>
+    <string name="new_topic_hint">yeni başlığınız için bişeyler karalayın!</string>
     <!-- Date Util -->
     <string name="date_util_term_less">den daha az</string>
     <string name="date_util_term_a">bir</string>
@@ -42,4 +61,5 @@
     <string name="date_util_prefix_over">in üzerinde</string>
     <string name="date_util_prefix_almost">nerdeyse</string>
     <string name="date_util_suffix">önce</string>
+    <string name="now">şimdi</string>
 </resources>

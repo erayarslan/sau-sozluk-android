@@ -8,8 +8,19 @@
         app:showAsAction="never" />
     <item
         android:id="@+id/action_search"
-        android:icon="@drawable/search"
+        android:icon="@drawable/ic_action_search"
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="android.support.v7.widget.SearchView"
         android:title="Search"/>
+    <item
+        android:id="@+id/action_login"
+        android:icon="@drawable/ic_action_person"
+        app:showAsAction="ifRoom|collapseActionView"
+        android:title="Login"/>
+    <item
+        android:id="@+id/action_logout"
+        android:icon="@drawable/ic_action_cancel"
+        app:showAsAction="ifRoom|collapseActionView"
+        android:visible="false"
+        android:title="Logout"/>
 </menu>

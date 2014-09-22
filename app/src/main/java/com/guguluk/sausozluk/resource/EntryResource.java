@@ -24,4 +24,8 @@ public class EntryResource {
     public void getEntryById(String id, Callback callback) {
         entryService.getEntryById(id, callback);
     }
+
+    public void createEntry(String stoken, String text, String createdBy, String topic, Callback callback) {
+        entryService.createEntry(stoken, text, createdBy, topic, callback);
+    }
 }

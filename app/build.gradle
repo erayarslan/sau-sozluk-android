@@ -6,10 +6,10 @@ android {
 
     defaultConfig {
         applicationId "com.guguluk.sausozluk"
-        minSdkVersion 9
+        minSdkVersion 7
         targetSdkVersion 20
-        versionCode 9
-        versionName "1.6"
+        versionCode 10
+        versionName "1.7"
     }
     buildTypes {
         release {

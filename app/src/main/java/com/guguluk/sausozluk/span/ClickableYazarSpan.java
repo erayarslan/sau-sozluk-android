@@ -1,4 +1,4 @@
-package com.guguluk.sausozluk.util;
+package com.guguluk.sausozluk.span;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.text.style.URLSpan;
 import android.view.View;
 
 import com.guguluk.sausozluk.activity.ProfileActivity;
+import com.guguluk.sausozluk.util.Constants;
+import com.guguluk.sausozluk.util.Utils;
 
 public class ClickableYazarSpan extends URLSpan {
     public ClickableYazarSpan(String url) {

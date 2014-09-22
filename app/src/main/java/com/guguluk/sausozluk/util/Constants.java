@@ -26,4 +26,14 @@ public class Constants {
     public static String time_format = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
     public static Integer pageEntryCount = 10;
     public static String spoiler = " ^^spoiler^^ ";
+    //
+    public static String store_token = "stoken";
+    public static String store_username = "username";
+    public static String store_clean = "clean";
+    public static String store_auth = "user_auth";
+    public static String store_id = "user_id";
+    //
+    public static String store_info_name = "_info";
+    public static String empty = "";
+    public static String ok = "ok";
 }
