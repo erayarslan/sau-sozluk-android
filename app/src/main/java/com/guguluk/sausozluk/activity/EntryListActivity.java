@@ -217,7 +217,7 @@ public class EntryListActivity extends ActionBarActivity {
         });
         //
         if(newPopupWindow == null) {
-            newPopupWindow = new PopupWindow(layout, (int)Utils.dpTopx(250,this), (int)Utils.dpTopx(250,this), true);
+            newPopupWindow = new PopupWindow(layout, (int)Utils.dpTopx(300,this), (int)Utils.dpTopx(250,this), true);
         }
         newPopupWindow.showAtLocation(layout, Gravity.CENTER, 0, 0);
     }
