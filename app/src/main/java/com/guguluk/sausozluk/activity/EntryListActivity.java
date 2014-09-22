@@ -93,7 +93,9 @@ public class EntryListActivity extends ActionBarActivity {
         entryListView = (ListView) findViewById(R.id.listEntry);
         //
         topicName = getIntent().getExtras().getString("topicUrl");
-        topicUrl = Utils.dirtyUrl(getIntent().getExtras().getString("topicUrl"));
+        if(topicName!=null) {
+            topicUrl = Utils.dirtyUrl(getIntent().getExtras().getString("topicUrl"));
+        }
         String entryId = getIntent().getExtras().getString("entryId");
         if(topicUrl!=null && entryId==null) {
             fetchEntries(currentPage);
@@ -267,6 +269,8 @@ public class EntryListActivity extends ActionBarActivity {
                 entryList.add(entry);
                 //
                 topic = entryResult.getData().getTopic();
+                topicUrl = topic.getUrl();
+                topicName = topic.getName();
                 //
                 render(entryList);
             }
