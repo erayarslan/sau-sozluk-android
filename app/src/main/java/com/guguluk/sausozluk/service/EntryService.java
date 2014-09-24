@@ -18,7 +18,7 @@ public interface EntryService {
     void getTopicEntriesByPage(@Path("topicUrl") String topicUrl, @Path("page") Integer page, Callback<EntryListResult> callback);
 
     @GET("/votes/{id}")
-    void getEntryStatsById(@Path("id") String id, Callback<StatsResult> callback);
+    void getEntryStatsById(@Header("stoken") String stoken, @Path("id") String id, Callback<StatsResult> callback);
 
     @GET("/entry/{id}")
     void getEntryById(@Path("id") String id, Callback<EntryResult> callback);

@@ -226,7 +226,7 @@ public class EntryListActivity extends ActionBarActivity {
 
     public void fetchStats(String id) {
         setSupportProgressBarIndeterminateVisibility(Boolean.TRUE);
-        entryResource.getEntryStatsById(id, new Callback() {
+        entryResource.getEntryStatsById(token, id, new Callback() {
             @Override
             public void failure(RetrofitError arg0) {
                 setSupportProgressBarIndeterminateVisibility(Boolean.FALSE);
@@ -334,7 +334,7 @@ public class EntryListActivity extends ActionBarActivity {
     private void render(List<Entry> entries) {
         final List<Entry> entryList = entries;
         //
-        EntryListAdapter entryListAdapter = new EntryListAdapter(EntryListActivity.this, entryList, currentPage);
+        EntryListAdapter entryListAdapter = new EntryListAdapter(token, EntryListActivity.this, entryList, currentPage);
         entryListView.setAdapter(entryListAdapter);
         entryListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override

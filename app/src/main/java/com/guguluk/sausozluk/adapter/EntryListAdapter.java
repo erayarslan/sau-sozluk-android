@@ -26,12 +26,14 @@ public class EntryListAdapter extends BaseAdapter {
     private List<Entry> entryList;
     private Context context;
     private Integer page;
+    private String token;
 
-    public EntryListAdapter(Activity activity, List<Entry> entryList, Integer page) {
+    public EntryListAdapter(String token, Activity activity, List<Entry> entryList, Integer page) {
         this.mInflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.entryList = entryList;
         this.context = activity.getBaseContext();
         this.page = page;
+        this.token = token;
     }
 
     @Override
@@ -62,6 +64,12 @@ public class EntryListAdapter extends BaseAdapter {
         textEntryContent.setTypeface(font);
         textEntryDetail.setTypeface(font);
         buttonEntryStats.setTypeface(font);
+        //
+        if(token != null && !token.trim().equalsIgnoreCase(Constants.empty)) {
+            buttonEntryStats.setVisibility(View.VISIBLE);
+        } else {
+            buttonEntryStats.setVisibility(View.INVISIBLE);
+        }
         //
         final Entry entry = entryList.get(position);
         //

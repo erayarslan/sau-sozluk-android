@@ -1,5 +1,6 @@
 package com.guguluk.sausozluk.activity;
 
+import android.app.ActivityManager;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v4.view.MenuItemCompat;
@@ -72,6 +73,15 @@ public class TopicListActivity extends ActionBarActivity implements SearchView.O
         topicListView = (ListView) findViewById(R.id.listTopic);
         //
         fetchTopics();
+    }
+
+    private boolean isServiceRun() {
+        ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        for(ActivityManager.RunningServiceInfo service : activityManager.getRunningServices(Integer.MAX_VALUE)) {
+            if(getApplication().getPackageName().equals(service.service.getPackageName())) {
+                return true;
+            }
+        } return false;
     }
 
     @Override

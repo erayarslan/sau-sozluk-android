@@ -17,8 +17,8 @@ public class EntryResource {
         entryService.getTopicEntriesByPage(topicUrl, page, callback);
     }
 
-    public void getEntryStatsById(String id, Callback callback) {
-        entryService.getEntryStatsById(id, callback);
+    public void getEntryStatsById(String stoken, String id, Callback callback) {
+        entryService.getEntryStatsById(stoken, id, callback);
     }
 
     public void getEntryById(String id, Callback callback) {
